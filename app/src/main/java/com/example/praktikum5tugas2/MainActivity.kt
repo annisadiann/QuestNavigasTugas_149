@@ -12,4 +12,18 @@ import androidx.compose.ui.Modifier
 import com.example.praktikum5tugas2.navigation.PengaturNavigasi
 import com.example.praktikum5tugas2.ui.theme.Praktikum5Tugas2Theme
 
-
+class MainActivity : ComponentActivity() {
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        enableEdgeToEdge()
+        setContent {
+            Praktikum5Tugas2Theme {
+                Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
+                    PengaturNavigasi(
+                        modifier = Modifier.padding(innerPadding)
+                    )
+                }
+            }
+        }
+    }
+}
