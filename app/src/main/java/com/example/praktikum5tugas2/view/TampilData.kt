@@ -37,3 +37,10 @@ fun TampilData(
     val colorButtonDark = Color(0xFF7B42DE)
     val colorButtonLight = Color(0xFFA681EA)
 
+    val items = listOf(
+        Pair(first = stringResource(id = R.string.nama_lengkap), second = "Annisa Dian Amarta"),
+        Pair(first = stringResource(id = R.string.jenis_kelamin), second = "Lainnya"),
+        Pair(first = "STATUS PERKAWINAN", second = "Belum Menikah"),
+        Pair(first = "ALAMAT", second = "Yogyakarta")
+    )
+
