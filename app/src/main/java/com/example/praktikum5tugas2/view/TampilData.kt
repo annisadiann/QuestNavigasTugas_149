@@ -97,3 +97,33 @@ fun TampilData(
                 }
             }
 
+            Spacer(modifier = Modifier.weight(1f))
+
+            Column(
+                verticalArrangement = Arrangement.spacedBy(8.dp)
+            ) {
+                Button(
+                    modifier = Modifier.fillMaxWidth(),
+                    onClick = onBackBtnClick,
+                    colors = ButtonDefaults.buttonColors(
+                        containerColor = colorButtonDark
+                    ),
+                    shape = RoundedCornerShape(8.dp)
+                ) {
+                    Text(text = "Beranda")
+                }
+
+                Button(
+                    modifier = Modifier.fillMaxWidth(),
+                    onClick = onFormulirBtnClick,
+                    colors = ButtonDefaults.buttonColors(
+                        containerColor = colorButtonLight
+                    ),
+                    shape = RoundedCornerShape(8.dp)
+                ) {
+                    Text(text = "Formulir Pendaftaran")
+                }
+            }
+        }
+    }
+}
