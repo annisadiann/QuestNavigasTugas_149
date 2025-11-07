@@ -18,3 +18,22 @@ enum class Navigasi {
     TampilData
 }
 
+@Composable
+fun PengaturNavigasi(
+    modifier: Modifier,
+    navController: NavHostController = rememberNavController()
+) {
+    Scaffold { innerPadding ->
+        NavHost(
+            navController = navController,
+            startDestination = Navigasi.Home.name,
+            modifier = Modifier.padding(innerPadding)
+        ) {
+            composable(Navigasi.Home.name) {
+                HalamanUtama(
+                    onSubmitBtnClick = {
+                        navController.navigate(Navigasi.TampilData.name)
+                    }
+                )
+            }
+
