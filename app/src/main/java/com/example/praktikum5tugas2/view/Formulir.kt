@@ -79,3 +79,94 @@ fun FormDataDiri1(
                 .padding(16.dp)
         )
 
+        Column(
+            modifier = Modifier
+                .fillMaxWidth()
+                .padding(top = 16.dp)
+                .background(Color.White, shape = RoundedCornerShape(12.dp))
+                .padding(16.dp)
+        ) {
+            Text(
+                text = "NAMA LENGKAP",
+                fontSize = 12.sp,
+                fontWeight = FontWeight.Medium,
+                color = Color.Gray,
+                modifier = Modifier.padding(bottom = 8.dp)
+            )
+            OutlinedTextField(
+                value = textNama,
+                singleLine = true,
+                shape = RoundedCornerShape(8.dp),
+                placeholder = { Text(text = "Isian nama lengkap", color = Color.Gray) },
+                onValueChange = {
+                    textNama = it
+                },
+                modifier = Modifier.fillMaxWidth(),
+                colors = OutlinedTextFieldDefaults.colors(
+                    focusedContainerColor = Color.White,
+                    unfocusedContainerColor = Color.White,
+                    focusedBorderColor = Color.LightGray,
+                    unfocusedBorderColor = Color.LightGray
+                )
+            )
+
+            Text(
+                text = "JENIS KELAMIN",
+                fontSize = 12.sp,
+                fontWeight = FontWeight.Medium,
+                color = Color.Gray,
+                modifier = Modifier.padding(top = 20.dp, bottom = 8.dp)
+            )
+            Column {
+                gender.forEach { item ->
+                    Row(
+                        modifier = Modifier
+                            .fillMaxWidth()
+                            .selectable(
+                                selected = textJK == item,
+                                onClick = { textJK = item }
+                            )
+                            .padding(vertical = 4.dp),
+                        verticalAlignment = Alignment.CenterVertically
+                    ) {
+                        RadioButton(
+                            selected = textJK == item,
+                            onClick = {
+                                textJK = item
+                            }
+                        )
+                        Text(text = item, modifier = Modifier.padding(start = 8.dp))
+                    }
+                }
+            }
+
+            Text(
+                text = "STATUS PERKAWINAN",
+                fontSize = 12.sp,
+                fontWeight = FontWeight.Medium,
+                color = Color.Gray,
+                modifier = Modifier.padding(top = 20.dp, bottom = 8.dp)
+            )
+            Column {
+                statusPerkawinan.forEach { item ->
+                    Row(
+                        modifier = Modifier
+                            .fillMaxWidth()
+                            .selectable(
+                                selected = textStatus == item,
+                                onClick = { textStatus = item }
+                            )
+                            .padding(vertical = 4.dp),
+                        verticalAlignment = Alignment.CenterVertically
+                    ) {
+                        RadioButton(
+                            selected = textStatus == item,
+                            onClick = {
+                                textStatus = item
+                            }
+                        )
+                        Text(text = item, modifier = Modifier.padding(start = 8.dp))
+                    }
+                }
+            }
+
