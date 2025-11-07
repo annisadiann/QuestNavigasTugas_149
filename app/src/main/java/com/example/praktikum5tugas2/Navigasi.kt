@@ -37,3 +37,24 @@ fun PengaturNavigasi(
                 )
             }
 
+            composable(Navigasi.TampilData.name) {
+                TampilData(
+                    onBackBtnClick = {
+                        navController.popBackStack()
+                    },
+                    onFormulirBtnClick = {
+                        navController.navigate(Navigasi.Formulir.name)
+                    }
+                )
+            }
+
+            composable(Navigasi.Formulir.name) {
+                FormDataDiri1(
+                    onSubmitClick = {
+                        navController.popBackStack()
+                    }
+                )
+            }
+        }
+    }
+}
