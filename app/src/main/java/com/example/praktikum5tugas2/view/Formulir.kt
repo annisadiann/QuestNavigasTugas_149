@@ -195,3 +195,65 @@ fun FormDataDiri1(
             )
         }
 
+        Button(
+            modifier = Modifier
+                .fillMaxWidth()
+                .padding(top = 24.dp)
+                .height(50.dp),
+            enabled = textNama.isNotEmpty() && textJK.isNotEmpty() &&
+                    textStatus.isNotEmpty() && textAlamat.isNotEmpty(),
+            onClick = {
+                nama = textNama
+                jenis = textJK
+                status = textStatus
+                alamat = textAlamat
+                showDialog = true
+            },
+            shape = RoundedCornerShape(25.dp),
+            colors = ButtonDefaults.buttonColors(
+                containerColor = purpleButton,
+                disabledContainerColor = purpleButton.copy(alpha = 0.5f)
+            )
+        ) {
+            Text(
+                text = "Submit",
+                fontSize = 16.sp,
+                fontWeight = FontWeight.Bold,
+                color = Color.White
+            )
+        }
+
+        if (showDialog) {
+            AlertDialog(
+                onDismissRequest = { showDialog = false },
+                title = {
+                    Text(
+                        text = "Data Pendaftaran",
+                        fontWeight = FontWeight.Bold,
+                        fontSize = 18.sp
+                    )
+                },
+                text = {
+                    Column {
+                        Text(text = "Nama : $nama", fontSize = 14.sp)
+                        Text(text = "Gender : $jenis", fontSize = 14.sp, modifier = Modifier.padding(top = 4.dp))
+                        Text(text = "Status : $status", fontSize = 14.sp, modifier = Modifier.padding(top = 4.dp))
+                        Text(text = "Alamat : $alamat", fontSize = 14.sp, modifier = Modifier.padding(top = 4.dp))
+                    }
+                },
+                confirmButton = {
+                    TextButton(
+                        onClick = {
+                            showDialog = false
+                            onSubmitClick()
+                        }
+                    ) {
+                        Text("OK", color = purpleButton, fontWeight = FontWeight.Bold)
+                    }
+                },
+                containerColor = Color.White,
+                shape = RoundedCornerShape(16.dp)
+            )
+        }
+    }
+}
