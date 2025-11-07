@@ -39,7 +39,7 @@ fun TampilData(
 
     val items = listOf(
         Pair(first = stringResource(id = R.string.nama_lengkap), second = "Annisa Dian Amarta"),
-        Pair(first = stringResource(id = R.string.jenis_kelamin), second = "Lainnya"),
+        Pair(first = stringResource(id = R.string.jenis_kelamin), second = "Perempuan"),
         Pair(first = "STATUS PERKAWINAN", second = "Belum Menikah"),
         Pair(first = "ALAMAT", second = "Yogyakarta")
     )
