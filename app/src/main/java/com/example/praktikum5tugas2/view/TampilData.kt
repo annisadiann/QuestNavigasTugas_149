@@ -44,3 +44,56 @@ fun TampilData(
         Pair(first = "ALAMAT", second = "Yogyakarta")
     )
 
+    Scaffold(
+        modifier = Modifier,
+        containerColor = colorBackground,
+        topBar = {
+            TopAppBar(
+                title = {
+                    Text(
+                        text = "List Daftar Peserta",
+                        color = Color.White,
+                        fontWeight = FontWeight.Bold
+                    )
+                },
+                colors = TopAppBarDefaults.mediumTopAppBarColors(
+                    containerColor = colorHeader
+                )
+            )
+        }
+    ) { isiRuang ->
+        Column(
+            modifier = Modifier
+                .padding(paddingValues = isiRuang)
+                .padding(16.dp)
+                .fillMaxSize(),
+        ) {
+            Column(
+                verticalArrangement = Arrangement.spacedBy(12.dp)
+            ) {
+                items.forEach { item ->
+                    Surface(
+                        modifier = Modifier.fillMaxWidth(),
+                        shape = RoundedCornerShape(8.dp),
+                        color = colorBox
+                    ) {
+                        Column(
+                            modifier = Modifier.padding(16.dp)
+                        ) {
+                            Text(
+                                text = item.first.uppercase(),
+                                fontSize = 14.sp,
+                                color = Color.DarkGray
+                            )
+                            Spacer(modifier = Modifier.height(4.dp))
+                            Text(
+                                text = item.second,
+                                fontWeight = FontWeight.Bold,
+                                fontSize = 18.sp,
+                                color = Color.Black
+                            )
+                        }
+                    }
+                }
+            }
+
