@@ -48,3 +48,42 @@ fun HalamanUtama(
                 )
             }
 
+            Column(
+                horizontalAlignment = Alignment.CenterHorizontally,
+                verticalArrangement = Arrangement.spacedBy(16.dp)
+            ) {
+
+                Text(
+                    text = "CARD-IST",
+                    fontSize = 40.sp,
+                    fontWeight = FontWeight.Bold,
+                    color = Color(0xFF6A2C9E),
+                    letterSpacing = 2.sp
+                )
+
+                Text(
+                    text = "🪐",
+                    fontSize = 60.sp
+                )
+
+                Text(
+                    text = "MOBILE APP",
+                    fontSize = 16.sp,
+                    color = Color(0xFF6A2C9E),
+                    letterSpacing = 1.sp
+                )
+
+                Text(
+                    text = "2025",
+                    fontSize = 20.sp,
+                    fontWeight = FontWeight.Bold,
+                    color = Color.White,
+                    modifier = Modifier
+                        .background(
+                            color = Color(0xFF6A2C9E),
+                            shape = RoundedCornerShape(16.dp)
+                        )
+                        .padding(horizontal = 24.dp, vertical = 4.dp)
+                )
+            }
+
